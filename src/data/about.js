@@ -9,9 +9,9 @@ export const aboutData = {
   github: "https://github.com/Tduncan15BRO",
 
   bio: [
-    "Teddy Duncan Jr. serves as an Assistant Professor of English at Valencia College while maintaining a vibrant freelance writing practice. His scholarly work focuses on Lacanian Psychoanalysis, Animal Studies, American Literature, Composition Theory, Pedagogy, and Continental Philosophy.",
-    "His publications appear in specialized journals including the International Journal of Žižek Studies and Between the Species. Duncan released his first academic book, Interpreting Meat, in late 2024. He is developing a follow-up manuscript exploring connections between Lacanian theory and animal studies, provisionally titled Zoological Lacan.",
-    "Beyond scholarly journals, he contributes art criticism and book reviews to publications including The Observer, Compact Magazine, and Washington Independent Review of Books."
+    "Teddy Duncan Jr. is an Assistant Professor of English at Valencia College and a freelance writer. His scholarly work focuses on Lacanian Psychoanalysis, Animal Studies, American Literature, Composition Theory, Pedagogy, and Continental Philosophy.",
+    "His publications appear in academic journals including the International Journal of Žižek Studies and Between the Species. Duncan released his first academic book, Interpreting Meat, in late 2024. He is working on a manuscript exploring connections between Lacanian theory and animal studies, tentatively titled Zoological Lacan.",
+    "Beyond scholarly journals, he has contributed writing to publications including The Observer, Document Journal, Compact Magazine, the Washington Independent Review of Books, and others."
   ],
 
   expertise: [
