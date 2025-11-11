@@ -96,7 +96,7 @@ const Hero = () => {
                 }}
               />
               <img
-                src="/assets/images/headshot.jpg"
+                src={`${import.meta.env.BASE_URL}assets/images/headshot.jpg`}
                 alt={aboutData.name}
                 className="relative rounded-full w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover shadow-2xl border-8 border-white dark:border-gray-800"
               />

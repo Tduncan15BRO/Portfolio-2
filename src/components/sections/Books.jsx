@@ -33,7 +33,7 @@ const Books = () => {
                 {book.coverImage && (
                   <div className="md:w-1/3 bg-gray-100 dark:bg-gray-800 flex items-center justify-center p-6">
                     <motion.img
-                      src={book.coverImage}
+                      src={`${import.meta.env.BASE_URL}${book.coverImage.replace(/^\//, '')}`}
                       alt={book.title}
                       className="w-full h-auto rounded shadow-lg"
                       whileHover={{
