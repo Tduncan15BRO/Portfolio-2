@@ -49,12 +49,12 @@ const Books = () => {
                 {/* Book Details */}
                 <div className={`p-6 ${book.coverImage ? 'md:w-2/3' : 'w-full'}`}>
                   {book.status === 'published' && (
-                    <span className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-sm font-semibold rounded-full mb-3">
+                    <span className="inline-block px-3 py-1 bg-sage-100 dark:bg-sage-900 text-sage-800 dark:text-sage-200 text-sm font-semibold rounded-full mb-3">
                       Published
                     </span>
                   )}
                   {book.status === 'in-progress' && (
-                    <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-semibold rounded-full mb-3">
+                    <span className="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-800 text-primary-800 dark:text-primary-200 text-sm font-semibold rounded-full mb-3">
                       Forthcoming
                     </span>
                   )}

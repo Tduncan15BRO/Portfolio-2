@@ -202,7 +202,7 @@ const Contact = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`w-full px-6 py-3 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl flex items-center justify-center ${
                   submitted
-                    ? 'bg-green-600 hover:bg-green-700 text-white'
+                    ? 'bg-sage-600 hover:bg-sage-700 text-white'
                     : 'bg-primary-800 hover:bg-primary-900 dark:bg-primary-600 dark:hover:bg-primary-700 text-white'
                 }`}
               >
