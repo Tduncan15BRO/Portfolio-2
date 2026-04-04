@@ -3,571 +3,879 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teddy Duncan Jr. — Curriculum Vitae</title>
+  <title>Teddy Duncan Jr.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
+    /* ── Tokens ─────────────────────────────────────── */
     :root {
-      --primary-900: #28201b;
-      --primary-800: #3c2f29;
-      --primary-700: #53423a;
-      --primary-600: #6a574a;
-      --primary-500: #836e5a;
-      --primary-400: #a08d79;
-      --primary-300: #c0b1a2;
-      --primary-200: #dbd2c8;
-      --primary-100: #ede8e2;
-      --primary-50: #f9f7f5;
-      --accent-700: #8f332a;
-      --accent-600: #b04035;
-      --accent-500: #cc5847;
-      --accent-400: #e07f70;
-      --accent-100: #fae8e4;
-      --sage-700: #3d4939;
-      --sage-600: #4c5c46;
-      --sage-200: #c9d3c3;
-      --sage-100: #e4e9e1;
-      --cream-100: #f9f5ed;
-      --cream-200: #f1ead9;
-      --cream-300: #e5dac6;
-      --text: #28201b;
-      --text-secondary: #53423a;
-      --text-muted: #836e5a;
-      --border: #dbd2c8;
-      --bg: #f9f5ed;
-      --bg-alt: #f1ead9;
+      --ink:       #231c17;
+      --ink-mid:   #3c2f29;
+      --ink-soft:  #6a574a;
+      --ink-faint: #c0b1a2;
+      --parchment: #f7f2e9;
+      --parchment-dark: #ede5d5;
+      --ox:        #8f332a;   /* oxblood */
+      --ox-light:  #f5e0dc;
+      --sage:      #4c5c46;
+      --sage-light:#e4e9e1;
+      --white:     #fdfaf5;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Source Sans 3', sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--bg);
+      font-size: 15.5px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--parchment);
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Layout */
-    .page {
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 3rem;
-    }
+    /* ── Typography helpers ─────────────────────────── */
+    .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+    em     { font-style: italic; }
 
-    /* Header / Nameplate */
-    .nameplate {
-      text-align: center;
-      padding-bottom: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--primary-800);
-    }
-    .nameplate h1 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--primary-900);
-      letter-spacing: 0.02em;
-      margin-bottom: 0.15rem;
-    }
-    .nameplate .title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      font-style: italic;
-      margin-bottom: 0.75rem;
-    }
-    .contact-row {
+    a { color: var(--ox); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--parchment);
+      border-bottom: 1px solid var(--ink-faint);
+      padding: 0.55rem 2rem;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.35rem 1.25rem;
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
-    .contact-row a {
-      color: var(--accent-700);
-      text-decoration: none;
-    }
-    .contact-row a:hover { text-decoration: underline; }
-
-    /* Sections */
-    section {
-      margin-bottom: 1.5rem;
-    }
-    section h2 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--primary-800);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.25rem;
-      margin-bottom: 0.75rem;
-    }
-    section h3 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--primary-700);
-      margin-top: 0.6rem;
-      margin-bottom: 0.2rem;
-    }
-
-    /* Entry: degree/position/award line */
-    .entry {
-      margin-bottom: 0.4rem;
-    }
-    .entry .main-line {
-      display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0 1rem;
+      gap: 1rem;
     }
-    .entry .main-line .label {
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
       font-weight: 600;
-      color: var(--text);
-    }
-    .entry .main-line .date {
-      font-size: 0.875rem;
-      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      color: var(--ink);
       white-space: nowrap;
     }
-    .entry .sub {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 1.5rem;
     }
-    .entry .note {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    /* Teaching courses */
-    .courses {
-      margin: 0.15rem 0 0.5rem 1.25rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-    .courses li { margin-bottom: 0.1rem; }
-
-    /* Publication entries */
-    .pub-entry {
-      margin-bottom: 0.5rem;
-      padding-left: 1.5rem;
-      text-indent: -1.5rem;
-      font-size: 0.95rem;
-      line-height: 1.55;
-    }
-    .pub-entry em { font-style: italic; }
-    .pub-entry a {
-      color: var(--accent-700);
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--ink-soft);
       text-decoration: none;
+      transition: color 0.15s;
     }
-    .pub-entry a:hover { text-decoration: underline; }
-    .pub-entry .badge {
+    .nav-links a:hover { color: var(--ox); }
+
+    /* ── Hero ───────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 3rem;
+      align-items: end;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4.5rem 2rem 3.5rem;
+    }
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.0;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+    .hero-text h1 span {
+      display: block;
+      font-weight: 600;
+    }
+    .hero-text .role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      line-height: 1.4;
+    }
+    .hero-text .bio {
+      font-size: 0.97rem;
+      color: var(--ink-mid);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      border-top: 1px solid var(--ink-faint);
+      padding-top: 1rem;
+    }
+    .hero-contact a { color: var(--ox); }
+    .hero-photo {
+      position: relative;
+      align-self: end;
+    }
+    .hero-photo img {
+      width: 100%;
+      display: block;
+      filter: sepia(0.12) contrast(1.02);
+    }
+    /* thin right-bottom offset frame */
+    .hero-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-right: 3px solid var(--ox);
+      border-bottom: 3px solid var(--ox);
+      transform: translate(8px, 8px);
+      pointer-events: none;
+    }
+
+    /* ── Section scaffold ───────────────────────────── */
+    section { width: 100%; }
+    .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem;
+    }
+    .section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ink-soft);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--ink-faint);
+      margin: 0;
+    }
+
+    /* ── Books ──────────────────────────────────────── */
+    .books-section { background: var(--ink); color: var(--white); }
+    .books-section .section-label { color: var(--ink-faint); }
+    .books-section .section-title { color: var(--white); }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .book-card { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .book-cover {
+      flex-shrink: 0;
+      width: 130px;
+    }
+    .book-cover img {
+      width: 100%;
+      display: block;
+      box-shadow: 4px 6px 20px rgba(0,0,0,0.5);
+    }
+    .book-cover-placeholder {
+      width: 130px;
+      aspect-ratio: 2/3;
+      background: var(--ink-mid);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .book-cover-placeholder span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--ink-faint);
+      text-align: center;
+      line-height: 1.4;
+    }
+    .book-details { flex: 1; }
+    .book-badge {
       display: inline-block;
       font-size: 0.7rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 0.1rem 0.4rem;
-      border-radius: 3px;
-      vertical-align: middle;
-      margin-left: 0.3rem;
+      letter-spacing: 0.06em;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 0.6rem;
+      border-radius: 2px;
     }
-    .badge-published { background: var(--sage-100); color: var(--sage-700); }
-    .badge-contract { background: var(--accent-100); color: var(--accent-700); }
-    .badge-forthcoming { background: var(--primary-100); color: var(--primary-700); }
-
-    /* Simple list (service, freelance outlets) */
-    .simple-list {
-      list-style: none;
-      padding: 0;
+    .badge-pub  { background: var(--sage-light); color: var(--sage); }
+    .badge-contract { background: var(--ox-light); color: var(--ox); }
+    .book-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--white);
+      margin-bottom: 0.35rem;
     }
-    .simple-list li {
-      position: relative;
-      padding-left: 1rem;
-      margin-bottom: 0.25rem;
-      font-size: 0.925rem;
-      color: var(--text-secondary);
-    }
-    .simple-list li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--primary-300);
-    }
-
-    /* Inline list (freelance outlets) */
-    .inline-list {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-    .inline-list .sep { color: var(--primary-300); margin: 0 0.15rem; }
-
-    /* Award amounts */
-    .amount {
+    .book-meta {
       font-size: 0.85rem;
-      color: var(--sage-600);
-      font-weight: 500;
+      color: var(--ink-faint);
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
     }
-
-    /* Media entry */
-    .media-entry {
-      margin-bottom: 0.4rem;
-      font-size: 0.925rem;
+    .book-desc {
+      font-size: 0.9rem;
+      color: rgba(253,250,245,0.75);
+      line-height: 1.65;
+      margin-bottom: 1rem;
     }
-    .media-type {
-      font-size: 0.75rem;
+    .book-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .btn {
+      display: inline-block;
+      font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--text-muted);
-      letter-spacing: 0.03em;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* Nav */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 0.5rem 0;
-      margin: 0 -1.5rem 1.5rem;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    nav a {
-      font-size: 0.8rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      padding: 0.45rem 1rem;
+      border: 1px solid;
+      transition: background 0.15s, color 0.15s;
       text-decoration: none;
-      margin-right: 1.25rem;
-      transition: color 0.2s;
     }
-    nav a:hover { color: var(--accent-700); }
+    .btn-ox { border-color: var(--ox); color: var(--ox); background: transparent; }
+    .btn-ox:hover { background: var(--ox); color: var(--white); text-decoration: none; }
+    .btn-ghost { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); background: transparent; }
+    .btn-ghost:hover { border-color: var(--white); color: var(--white); text-decoration: none; }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .page { padding: 1rem 1rem 2rem; }
-      .nameplate h1 { font-size: 1.8rem; }
-      .entry .main-line { flex-direction: column; gap: 0; }
-      .entry .main-line .date { font-size: 0.8rem; }
-      nav { margin: 0 -1rem 1rem; padding-left: 1rem; padding-right: 1rem; }
+    /* ── Scholarship ────────────────────────────────── */
+    .scholarship-section { background: var(--white); }
+    .pubs-list { list-style: none; padding: 0; }
+    .pubs-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--parchment-dark);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--ink-mid);
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+    .pubs-list li:last-child { border-bottom: none; }
+    .pub-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ox);
+      min-width: 2.8rem;
+      flex-shrink: 0;
+    }
+    .pub-text a { color: var(--ox); }
+    .sub-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-soft);
+      margin: 2rem 0 0.5rem;
+    }
+
+    /* ── Academic ───────────────────────────────────── */
+    .academic-section { background: var(--parchment); }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+    }
+    .col-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .entry { margin-bottom: 0.9rem; }
+    .entry .label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+    .entry .label em { font-style: italic; font-weight: 400; }
+    .entry .meta {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.4;
+    }
+    .entry .year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      color: var(--ox);
+      font-weight: 600;
+    }
+    .teaching-institution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-top: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .teaching-period {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      margin-bottom: 0.4rem;
+    }
+    .course-list { list-style: none; padding: 0; }
+    .course-list li {
+      font-size: 0.875rem;
+      color: var(--ink-mid);
+      padding: 0.15rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .course-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--ink-faint);
+    }
+
+    /* ── Writing ────────────────────────────────────── */
+    .writing-section { background: var(--parchment-dark); }
+    .writing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+    }
+    .outlets {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      line-height: 2;
+      color: var(--ink-mid);
+    }
+    .outlets .sep { color: var(--ink-faint); margin: 0 0.2rem; }
+
+    /* ── Recognition ────────────────────────────────── */
+    .recognition-section { background: var(--white); }
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .recog-item {
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--parchment-dark);
+      margin-bottom: 0.75rem;
+    }
+    .recog-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .recog-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+    .recog-meta {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      margin-top: 0.1rem;
+    }
+    .recog-amount {
+      font-size: 0.8rem;
+      color: var(--sage);
+      font-weight: 600;
+    }
+    .service-list { list-style: none; padding: 0; }
+    .service-list li {
+      font-size: 0.875rem;
+      color: var(--ink-mid);
+      padding: 0.2rem 0;
+      padding-left: 0.9rem;
+      position: relative;
+      line-height: 1.45;
+    }
+    .service-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--ox);
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    /* ── Footer ─────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      color: var(--ink-faint);
+      text-align: center;
+      padding: 2.5rem 2rem;
+    }
+    footer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    footer .foot-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.3rem 2rem;
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+    }
+    footer .foot-contact a { color: var(--ox); }
+    footer .copy { font-size: 0.78rem; opacity: 0.5; }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { max-width: 260px; }
+      .books-grid, .two-col, .writing-grid, .three-col { grid-template-columns: 1fr; gap: 2rem; }
+      .book-card { flex-direction: row; }
+      nav { padding: 0.5rem 1rem; }
+      .nav-links { gap: 0.15rem 1rem; }
+      .inner { padding: 2.5rem 1.25rem; }
+      .hero { padding: 2.5rem 1.25rem 2rem; }
+    }
+    @media (max-width: 500px) {
+      .book-card { flex-direction: column; }
+      .book-cover, .book-cover-placeholder { width: 110px; }
+      .nav-name { display: none; }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <!-- NAMEPLATE -->
-    <header class="nameplate">
-      <h1>Teddy Duncan Jr.</h1>
-      <div class="title">Assistant Professor of English &middot; Valencia College &middot; Orlando, Florida</div>
-      <div class="contact-row">
-        <span><a href="mailto:Tduncan15@valenciacollege.edu">Tduncan15@valenciacollege.edu</a></span>
-        <span>407-541-7139</span>
-        <span>206 Mc Quigg Avenue, Orlando 32805</span>
-      </div>
-    </header>
 
-    <!-- NAV -->
-    <nav>
-      <a href="#education">Education</a>
-      <a href="#positions">Positions</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#books">Books</a>
-      <a href="#publications">Publications</a>
-      <a href="#writing">Writing</a>
-      <a href="#awards">Awards</a>
-      <a href="#service">Service</a>
-    </nav>
-
-    <!-- EDUCATION -->
-    <section id="education">
-      <h2>Education</h2>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">PhD, Texts &amp; Technology</span>
-          <span class="date">Spring 2028 (Anticipated)</span>
-        </div>
-        <div class="sub">University of Central Florida</div>
-      </div>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">MA, English</span>
-          <span class="date">Spring 2022</span>
-        </div>
-        <div class="sub">University of South Florida</div>
-      </div>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">BA, English</span>
-          <span class="date">Spring 2020</span>
-        </div>
-        <div class="sub">University of Central Florida</div>
-      </div>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">AA, General Education</span>
-          <span class="date">Fall 2017</span>
-        </div>
-        <div class="sub">Valencia College</div>
-      </div>
-    </section>
-
-    <!-- POSITIONS HELD -->
-    <section id="positions">
-      <h2>Positions Held</h2>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">Assistant Professor — Valencia College</span>
-          <span class="date">2024–Present</span>
-        </div>
-      </div>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">Full-Time Professor — Keiser University</span>
-          <span class="date">2022–2024</span>
-        </div>
-      </div>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">Graduate Teaching Assistant — University of South Florida</span>
-          <span class="date">2020–2022</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEACHING EXPERIENCE -->
-    <section id="teaching">
-      <h2>Teaching Experience</h2>
-
-      <h3>Valencia College <span style="font-weight:400; font-style:italic; font-size:0.9rem; color:var(--text-muted);">— January 2024–Present (Osceola Campus)</span></h3>
-      <ul class="courses">
-        <li>Composition I (ENC 1101), Online and In-Person</li>
-        <li>Composition II (ENC 1102), Online and In-Person</li>
-      </ul>
-
-      <h3>Keiser University <span style="font-weight:400; font-style:italic; font-size:0.9rem; color:var(--text-muted);">— June 2022–July 2024</span></h3>
-      <ul class="courses">
-        <li>Basic English (ENC 0001), In-Person</li>
-        <li>Composition I (ENC 1101), In-Person</li>
-        <li>Composition II (ENC 2102), In-Person</li>
-        <li>American Literature (AML 1000), In-Person</li>
-        <li>Writing For Managers (ENC 3213), In-Person</li>
-        <li>Research Writing (ENC 4313), In-Person</li>
-      </ul>
-
-      <h3>University of South Florida <span style="font-weight:400; font-style:italic; font-size:0.9rem; color:var(--text-muted);">— Aug. 2020–May 2022 (Instructor of Record)</span></h3>
-      <ul class="courses">
-        <li>Composition I (ENC 1101), Online and In-Person</li>
-        <li>Composition II (ENC 1102), Online and In-Person</li>
-      </ul>
-    </section>
-
-    <!-- BOOK PROJECTS -->
-    <section id="books">
-      <h2>Book Projects <span style="font-size:0.8rem; font-weight:400; text-transform:none; letter-spacing:0; color:var(--text-muted);">(Peer-Reviewed)</span></h2>
-      <div class="pub-entry">
-        <em>Zoological Lacan: A Lacanian Framework for Animality and Humanness.</em> Routledge, Lines of the Symbolic Series. 2027 (Estimated). <span class="badge badge-contract">Under Contract</span>
-      </div>
-      <div class="pub-entry">
-        <em>Interpreting Meat: Theorizing the Commodification and Consumption of Animals.</em> McFarland &amp; Company. December 2024. <span class="badge badge-published">Published</span>
-      </div>
-    </section>
-
-    <!-- SCHOLARLY PUBLICATIONS -->
-    <section id="publications">
-      <h2>Scholarly Publications <span style="font-size:0.8rem; font-weight:400; text-transform:none; letter-spacing:0; color:var(--text-muted);">(Peer-Reviewed)</span></h2>
-      <div class="pub-entry">
-        "The Limits of Understanding: Lacanian Pedagogy in the Composition Classroom." <em>Journal on Excellence in College Teaching.</em> May 2025.
-      </div>
-      <div class="pub-entry">
-        "Recognizing Exploitation and Rejecting Analogy: An Analysis of the Meat-Commodity." <em>Between the Species.</em> March 2024.
-      </div>
-      <div class="pub-entry">
-        "The Inexplicable Real and Silent (Female) Desire: A Lacanian Approach to the Unsaid in <em>The Awakening.</em>" <em>Midwest Quarterly.</em> January 2023.
-      </div>
-      <div class="pub-entry">
-        "Politics of Dismissal and Death: Tentacle, Necropolitics, and the Political Subject." <em>Latin American Literary Review.</em> November 2022.
-      </div>
-      <div class="pub-entry">
-        "Žižekian Ideology and the 'Sympathetic' Slave-Owner: Ostensible Necessity of Slavery in <em>Our Nig</em> and <em>Minnie's Sacrifice.</em>" <em>International Journal of Žižek Studies.</em> July 2021.
-      </div>
-
-      <h3 style="margin-top:1rem;">Scholarly Reviews</h3>
-      <div class="pub-entry">
-        "Review of <em>Animals, Ethics and Us.</em>" <em>Between the Species.</em> May 2023.
-      </div>
-    </section>
-
-    <!-- FREELANCE WRITING -->
-    <section id="writing">
-      <h2>Freelance Writing <span style="font-size:0.8rem; font-weight:400; text-transform:none; letter-spacing:0; color:var(--text-muted);">(Non-Peer Review)</span></h2>
-      <div class="inline-list">
-        <em>ASAP Review Journal</em><span class="sep">&middot;</span>
-        <em>Creative Loafing Tampa</em><span class="sep">&middot;</span>
-        <em>Compact Magazine</em><span class="sep">&middot;</span>
-        <em>Dragon, Crab, and Turtle Art Gallery</em><span class="sep">&middot;</span>
-        <em>Document Journal</em><span class="sep">&middot;</span>
-        <em>Fad Magazine</em><span class="sep">&middot;</span>
-        <em>Inside Higher Ed</em><span class="sep">&middot;</span>
-        <em>New Associations</em><span class="sep">&middot;</span>
-        <em>Observer</em> (New York)<span class="sep">&middot;</span>
-        <em>Washington Independent Review of Books</em>
-      </div>
-    </section>
-
-    <!-- CREATIVE PUBLICATIONS -->
-    <section>
-      <h2>Creative Publications</h2>
-      <div class="pub-entry">
-        "Sadness is a Dialectic." <em>Forever Magazine,</em> Online, 2023.
-      </div>
-      <div class="pub-entry">
-        "Notes of a Household Gnat." <em>SR-50 Magazine,</em> Issue 3.5, Print, 2020.
-      </div>
-      <div class="pub-entry">
-        "An Absolute Study." Chapbook published by Death of Workers Whilst Building Skyscrapers Press (UK), Print, 2019.
-      </div>
-      <div class="pub-entry">
-        "At Ginsberg's Grave." <em>Occulum Journal,</em> Online, 2018.
-      </div>
-    </section>
-
-    <!-- CONFERENCE PRESENTATIONS -->
-    <section>
-      <h2>Conference Presentations</h2>
-      <div class="pub-entry">
-        "The Impossibility of Understanding: Lacanian Pedagogy in the Composition Classroom." Florida College English Association Conference, 2025.
-      </div>
-      <div class="pub-entry">
-        "The 'Grievability' of Two Indigenous Women: Emerging from the Frames of Criminal Narratives." English Symposium, University of Central Florida, 2021.
-      </div>
-    </section>
-
-    <!-- MEDIA COVERAGE / INTERVIEWS -->
-    <section>
-      <h2>Media Coverage / Interviews</h2>
-      <div class="media-entry">
-        <span class="media-type">Podcast</span> — "The Animal Turn" Podcast Appearance for <em>Interpreting Meat</em> (Forthcoming)
-      </div>
-      <div class="media-entry">
-        <span class="media-type">Review</span> — "So it is the Old Meat After All: Review of <em>Interpreting Meat,</em>" <em>Humanimalia,</em> 2026 (Dr. Jamie Redgate)
-      </div>
-      <div class="media-entry">
-        <span class="media-type">Review</span> — "A Review of <em>Interpreting Meat,</em>" <em>Electronic Book Review,</em> 2025 (Dr. Gabriela Jarzębowska)
-      </div>
-      <div class="media-entry">
-        <span class="media-type">Podcast</span> — "Office Hours: The Professors are in!" Podcast Appearance, 2025
-      </div>
-      <div class="media-entry">
-        <span class="media-type">Interview</span> — Interview by <em>Sarx Magazine</em> on <em>Interpreting Meat,</em> Online, 2025
-      </div>
-      <div class="media-entry">
-        <span class="media-type">Interview</span> — Interview by <em>Washington Independent Review of Books</em> on <em>Interpreting Meat,</em> Online, 2025
-      </div>
-    </section>
-
-    <!-- HONORS & AWARDS -->
-    <section id="awards">
-      <h2>Honors &amp; Awards</h2>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">Summer Mentor Fellowship</span>
-          <span class="date">Summer 2025</span>
-        </div>
-        <div class="sub">University of Central Florida. Awarded to write chapter of contracted book. <span class="amount">($4,500)</span></div>
-      </div>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">TLC Appreciation Award</span>
-          <span class="date">Fall 2023</span>
-        </div>
-        <div class="sub">Keiser University. Awarded for service to campus.</div>
-      </div>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">Irving Deer Memorial Scholarship Award</span>
-          <span class="date">Spring 2022</span>
-        </div>
-        <div class="sub">University of South Florida. Awarded based on merit of graduate research writing. <span class="amount">($1,275)</span></div>
-      </div>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">Distinguished Undergraduate Research Award</span>
-          <span class="date">Spring 2020</span>
-        </div>
-        <div class="sub">University of Central Florida. Awarded to undergraduates based on merit of conducted research. <span class="amount">($250)</span></div>
-      </div>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">Selected Poetry Award</span>
-          <span class="date">Spring 2017</span>
-        </div>
-        <div class="sub"><em>Fallero Literary Magazine,</em> Valencia College. <span class="amount">($75)</span></div>
-      </div>
-    </section>
-
-    <!-- SERVICE -->
-    <section id="service">
-      <h2>Service</h2>
-      <ul class="simple-list">
-        <li>Co-editor of <em>Valencia Scholar</em> (Forthcoming Digital Journal)</li>
-        <li>Host of "Puma Reads" (Semesterly Reading Series), 2024–Present</li>
-        <li>Team Member, "Campus Connections: Bridging Students, Staff, and Faculty," Fall 2025</li>
-        <li>School of Writing and Literature Outcomes Team, 2025</li>
-        <li>Valencia Faculty Learning Committee Convener (Osceola Campus), 2024–2025</li>
-        <li>Keiser University Literacy Committee Chair, 2023–2024</li>
-        <li>Keiser TLC Coordinator (Technology and Learning Center), 2023–2024</li>
-        <li>Editor of <em>Keiser University Tampa Literary Magazine,</em> 2023–2024</li>
-        <li>Peer-Review Reader, <em>Between the Species</em></li>
-        <li>Peer-Review Reader, <em>Violence: An International Journal</em></li>
-        <li>Peer-Review Reader, <em>English Journal</em></li>
-        <li>NCTE Member</li>
-        <li>FCEA Member (Florida College English Association)</li>
-        <li>Graduate Mentorship Program (Mentored Two USF Undergraduate English Students), 2020–2022</li>
-      </ul>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section>
-      <h2>Certifications</h2>
-      <div class="entry">
-        <div class="main-line">
-          <span class="label">Certified Online Instructor</span>
-        </div>
-        <div class="sub">Obtained through USF's online instructor certification course.</div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      &copy; 2026 Teddy Duncan Jr.
-    </footer>
+<!-- NAV -->
+<nav>
+  <span class="nav-name">Teddy Duncan Jr.</span>
+  <div class="nav-links">
+    <a href="#books">Books</a>
+    <a href="#scholarship">Scholarship</a>
+    <a href="#academic">Teaching</a>
+    <a href="#writing">Writing</a>
+    <a href="#recognition">Awards</a>
+    <a href="#contact">Contact</a>
   </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>
+      Teddy<br>
+      <span>Duncan Jr.</span>
+    </h1>
+    <p class="role">Assistant Professor of English &nbsp;·&nbsp; Valencia College<br>Scholar · Author · Critic</p>
+    <p class="bio">
+      Teddy Duncan Jr. works at the intersection of Lacanian psychoanalysis,
+      animal studies, and American literature. He is the author of
+      <em>Interpreting Meat</em> (McFarland, 2024) and has a second book,
+      <em>Zoological Lacan</em>, under contract with Routledge. His freelance
+      writing appears in <em>Document Journal</em>, <em>The Observer</em>,
+      <em>Compact Magazine</em>, and elsewhere.
+    </p>
+    <div class="hero-contact">
+      <a href="mailto:Tduncan15@valenciacollege.edu">Tduncan15@valenciacollege.edu</a>
+      <span>407-541-7139</span>
+      <span>Orlando, Florida</span>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="../assets/images/headshot.jpg" alt="Teddy Duncan Jr." />
+  </div>
+</div>
+
+<hr class="divider" />
+
+<!-- BOOKS -->
+<section class="books-section" id="books">
+  <div class="inner">
+    <div class="section-label">Published Work</div>
+    <h2 class="section-title">Books</h2>
+    <div class="books-grid">
+
+      <!-- Interpreting Meat -->
+      <div class="book-card">
+        <div class="book-cover">
+          <img src="../assets/images/interpreting-meat-cover.jpg" alt="Interpreting Meat cover" />
+        </div>
+        <div class="book-details">
+          <span class="book-badge badge-pub">Published</span>
+          <div class="book-title">Interpreting Meat: Theorizing the Commodification and Consumption of Animals</div>
+          <div class="book-meta">McFarland &amp; Company &nbsp;·&nbsp; December 2024</div>
+          <p class="book-desc">
+            A psychoanalytic and critical theory account of how animals are
+            positioned as commodities within consumer culture, drawing on
+            Lacanian frameworks to interrogate the ideological structures
+            underlying meat production and consumption.
+          </p>
+          <div class="book-links">
+            <a class="btn btn-ox" href="https://www.amazon.com/Interpreting-Meat-Theorizing-Commodification-Consumption/dp/1476697531" target="_blank" rel="noopener">Amazon</a>
+            <a class="btn btn-ghost" href="https://mcfarlandbooks.com/product/interpreting-meat/" target="_blank" rel="noopener">Publisher</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zoological Lacan -->
+      <div class="book-card">
+        <div class="book-cover-placeholder">
+          <span>Zoological Lacan</span>
+        </div>
+        <div class="book-details">
+          <span class="book-badge badge-contract">Under Contract</span>
+          <div class="book-title">Zoological Lacan: A Lacanian Framework for Animality and Humanness</div>
+          <div class="book-meta">Routledge &nbsp;·&nbsp; Lines of the Symbolic Series &nbsp;·&nbsp; 2027 (Est.)</div>
+          <p class="book-desc">
+            Extends Lacanian theory into animal studies to develop a sustained
+            framework for thinking the boundary between human and animal —
+            and what it means to theorize animality through the symbolic order.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Press -->
+    <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+      <div class="section-label" style="margin-bottom: 1rem;">Press &amp; Reviews for <em>Interpreting Meat</em></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.6rem;">
+        <div style="font-size:0.875rem; color: rgba(253,250,245,0.65); line-height:1.5;">
+          Reviewed by Dr. Gabriela Jarzębowska &nbsp;·&nbsp; <em>Electronic Book Review,</em> 2025
+        </div>
+        <div style="font-size:0.875rem; color: rgba(253,250,245,0.65); line-height:1.5;">
+          Reviewed by Dr. Jamie Redgate &nbsp;·&nbsp; <em>Humanimalia,</em> 2026
+        </div>
+        <div style="font-size:0.875rem; color: rgba(253,250,245,0.65); line-height:1.5;">
+          Interview &nbsp;·&nbsp; <em>Sarx Magazine,</em> 2025
+        </div>
+        <div style="font-size:0.875rem; color: rgba(253,250,245,0.65); line-height:1.5;">
+          Interview &nbsp;·&nbsp; <em>Washington Independent Review of Books,</em> 2025
+        </div>
+        <div style="font-size:0.875rem; color: rgba(253,250,245,0.65); line-height:1.5;">
+          Podcast &nbsp;·&nbsp; "Office Hours: The Professors are in!" 2025
+        </div>
+        <div style="font-size:0.875rem; color: rgba(253,250,245,0.65); line-height:1.5;">
+          Podcast &nbsp;·&nbsp; "The Animal Turn" (Forthcoming)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHOLARSHIP -->
+<section class="scholarship-section" id="scholarship">
+  <div class="inner">
+    <div class="section-label">Peer-Reviewed</div>
+    <h2 class="section-title">Scholarly Publications</h2>
+
+    <ul class="pubs-list">
+      <li>
+        <span class="pub-year">2025</span>
+        <span class="pub-text">
+          "The Limits of Understanding: Lacanian Pedagogy in the Composition Classroom."
+          <em>Journal on Excellence in College Teaching.</em> May 2025.
+        </span>
+      </li>
+      <li>
+        <span class="pub-year">2024</span>
+        <span class="pub-text">
+          "Recognizing Exploitation and Rejecting Analogy: An Analysis of the Meat-Commodity."
+          <em>Between the Species.</em> March 2024.
+        </span>
+      </li>
+      <li>
+        <span class="pub-year">2023</span>
+        <span class="pub-text">
+          "The Inexplicable Real and Silent (Female) Desire: A Lacanian Approach to the Unsaid in <em>The Awakening.</em>"
+          <em>Midwest Quarterly.</em> January 2023.
+        </span>
+      </li>
+      <li>
+        <span class="pub-year">2022</span>
+        <span class="pub-text">
+          "Politics of Dismissal and Death: Tentacle, Necropolitics, and the Political Subject."
+          <em>Latin American Literary Review.</em> November 2022.
+        </span>
+      </li>
+      <li>
+        <span class="pub-year">2021</span>
+        <span class="pub-text">
+          "Žižekian Ideology and the 'Sympathetic' Slave-Owner: Ostensible Necessity of Slavery in
+          <em>Our Nig</em> and <em>Minnie's Sacrifice.</em>"
+          <em>International Journal of Žižek Studies.</em> July 2021.
+        </span>
+      </li>
+    </ul>
+
+    <p class="sub-heading">Scholarly Reviews</p>
+    <ul class="pubs-list">
+      <li>
+        <span class="pub-year">2023</span>
+        <span class="pub-text">
+          "Review of <em>Animals, Ethics and Us.</em>" <em>Between the Species.</em> May 2023.
+        </span>
+      </li>
+    </ul>
+
+    <p class="sub-heading">Conference Presentations</p>
+    <ul class="pubs-list">
+      <li>
+        <span class="pub-year">2025</span>
+        <span class="pub-text">
+          "The Impossibility of Understanding: Lacanian Pedagogy in the Composition Classroom."
+          Florida College English Association Conference.
+        </span>
+      </li>
+      <li>
+        <span class="pub-year">2021</span>
+        <span class="pub-text">
+          "The 'Grievability' of Two Indigenous Women: Emerging from the Frames of Criminal Narratives."
+          English Symposium, University of Central Florida.
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ACADEMIC -->
+<section class="academic-section" id="academic">
+  <div class="inner">
+    <div class="section-label">Experience &amp; Education</div>
+    <h2 class="section-title">Academic</h2>
+    <div class="two-col">
+
+      <!-- Left: Education + Positions -->
+      <div>
+        <div class="col-title">Education</div>
+        <div class="entry">
+          <div class="label">PhD, Texts &amp; Technology</div>
+          <div class="meta">University of Central Florida &nbsp;<span class="year">2028 (Anticipated)</span></div>
+        </div>
+        <div class="entry">
+          <div class="label">MA, English</div>
+          <div class="meta">University of South Florida &nbsp;<span class="year">2022</span></div>
+        </div>
+        <div class="entry">
+          <div class="label">BA, English</div>
+          <div class="meta">University of Central Florida &nbsp;<span class="year">2020</span></div>
+        </div>
+        <div class="entry">
+          <div class="label">AA, General Education</div>
+          <div class="meta">Valencia College &nbsp;<span class="year">2017</span></div>
+        </div>
+
+        <div class="col-title" style="margin-top: 2rem;">Positions Held</div>
+        <div class="entry">
+          <div class="label">Assistant Professor of English</div>
+          <div class="meta">Valencia College &nbsp;<span class="year">2024–Present</span></div>
+        </div>
+        <div class="entry">
+          <div class="label">Full-Time Professor</div>
+          <div class="meta">Keiser University &nbsp;<span class="year">2022–2024</span></div>
+        </div>
+        <div class="entry">
+          <div class="label">Graduate Teaching Assistant</div>
+          <div class="meta">University of South Florida &nbsp;<span class="year">2020–2022</span></div>
+        </div>
+
+        <div class="col-title" style="margin-top: 2rem;">Certifications</div>
+        <div class="entry">
+          <div class="label">Certified Online Instructor</div>
+          <div class="meta">University of South Florida online certification program</div>
+        </div>
+      </div>
+
+      <!-- Right: Teaching -->
+      <div>
+        <div class="col-title">Teaching Experience</div>
+
+        <div class="teaching-institution">Valencia College</div>
+        <div class="teaching-period">January 2024–Present &nbsp;·&nbsp; Osceola Campus</div>
+        <ul class="course-list">
+          <li>Composition I (ENC 1101), Online and In-Person</li>
+          <li>Composition II (ENC 1102), Online and In-Person</li>
+        </ul>
+
+        <div class="teaching-institution">Keiser University</div>
+        <div class="teaching-period">June 2022–July 2024</div>
+        <ul class="course-list">
+          <li>Basic English (ENC 0001)</li>
+          <li>Composition I (ENC 1101)</li>
+          <li>Composition II (ENC 2102)</li>
+          <li>American Literature (AML 1000)</li>
+          <li>Writing for Managers (ENC 3213)</li>
+          <li>Research Writing (ENC 4313)</li>
+        </ul>
+
+        <div class="teaching-institution">University of South Florida</div>
+        <div class="teaching-period">Aug. 2020–May 2022 &nbsp;·&nbsp; Instructor of Record</div>
+        <ul class="course-list">
+          <li>Composition I (ENC 1101), Online and In-Person</li>
+          <li>Composition II (ENC 1102), Online and In-Person</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="writing-section" id="writing">
+  <div class="inner">
+    <div class="section-label">Beyond the Academy</div>
+    <h2 class="section-title">Writing</h2>
+    <div class="writing-grid">
+
+      <div>
+        <div class="col-title">Freelance &amp; Criticism</div>
+        <p style="font-size:0.875rem; color:var(--ink-soft); margin-bottom:1rem;">
+          Essays, reviews, and criticism published in:
+        </p>
+        <div class="outlets">
+          <em>ASAP Review Journal</em><span class="sep">&nbsp;·&nbsp;</span>
+          <em>Creative Loafing Tampa</em><span class="sep">&nbsp;·&nbsp;</span>
+          <em>Compact Magazine</em><span class="sep">&nbsp;·&nbsp;</span>
+          <em>Document Journal</em><span class="sep">&nbsp;·&nbsp;</span>
+          <em>Dragon, Crab &amp; Turtle Art Gallery</em><span class="sep">&nbsp;·&nbsp;</span>
+          <em>Fad Magazine</em><span class="sep">&nbsp;·&nbsp;</span>
+          <em>Inside Higher Ed</em><span class="sep">&nbsp;·&nbsp;</span>
+          <em>New Associations</em><span class="sep">&nbsp;·&nbsp;</span>
+          <em>Observer</em> (New York)<span class="sep">&nbsp;·&nbsp;</span>
+          <em>Washington Independent Review of Books</em>
+        </div>
+      </div>
+
+      <div>
+        <div class="col-title">Creative Publications</div>
+        <div class="entry">
+          <div class="label">"Sadness is a Dialectic"</div>
+          <div class="meta"><em>Forever Magazine,</em> Online &nbsp;<span class="year">2023</span></div>
+        </div>
+        <div class="entry">
+          <div class="label">"Notes of a Household Gnat"</div>
+          <div class="meta"><em>SR-50 Magazine,</em> Issue 3.5, Print &nbsp;<span class="year">2020</span></div>
+        </div>
+        <div class="entry">
+          <div class="label">"An Absolute Study" <em style="font-size:0.85rem;">(Chapbook)</em></div>
+          <div class="meta">Death of Workers Whilst Building Skyscrapers Press (UK), Print &nbsp;<span class="year">2019</span></div>
+        </div>
+        <div class="entry">
+          <div class="label">"At Ginsberg's Grave"</div>
+          <div class="meta"><em>Occulum Journal,</em> Online &nbsp;<span class="year">2018</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RECOGNITION -->
+<section class="recognition-section" id="recognition">
+  <div class="inner">
+    <div class="section-label">Honors, Service &amp; Community</div>
+    <h2 class="section-title">Recognition</h2>
+    <div class="three-col">
+
+      <!-- Awards -->
+      <div>
+        <div class="col-title">Awards</div>
+        <div class="recog-item">
+          <div class="recog-title">Summer Mentor Fellowship</div>
+          <div class="recog-meta">University of Central Florida, Summer 2025</div>
+          <div class="recog-amount">$4,500 — awarded to write chapter of contracted book</div>
+        </div>
+        <div class="recog-item">
+          <div class="recog-title">TLC Appreciation Award</div>
+          <div class="recog-meta">Keiser University, Fall 2023</div>
+        </div>
+        <div class="recog-item">
+          <div class="recog-title">Irving Deer Memorial Scholarship</div>
+          <div class="recog-meta">University of South Florida, Spring 2022</div>
+          <div class="recog-amount">$1,275 — merit of graduate research writing</div>
+        </div>
+        <div class="recog-item">
+          <div class="recog-title">Distinguished Undergraduate Research Award</div>
+          <div class="recog-meta">University of Central Florida, Spring 2020</div>
+          <div class="recog-amount">$250</div>
+        </div>
+        <div class="recog-item">
+          <div class="recog-title">Selected Poetry Award</div>
+          <div class="recog-meta"><em>Fallero Literary Magazine,</em> Valencia College, Spring 2017</div>
+          <div class="recog-amount">$75</div>
+        </div>
+      </div>
+
+      <!-- Service -->
+      <div>
+        <div class="col-title">Service</div>
+        <ul class="service-list">
+          <li>Co-editor, <em>Valencia Scholar</em> (Forthcoming Digital Journal)</li>
+          <li>Host, "Puma Reads" Reading Series, 2024–Present</li>
+          <li>Team Member, "Campus Connections," Fall 2025</li>
+          <li>School of Writing and Literature Outcomes Team, 2025</li>
+          <li>Valencia Faculty Learning Committee Convener (Osceola), 2024–2025</li>
+          <li>Keiser Literacy Committee Chair, 2023–2024</li>
+          <li>Keiser TLC Coordinator, 2023–2024</li>
+          <li>Editor, <em>Keiser University Tampa Literary Magazine,</em> 2023–2024</li>
+          <li>Graduate Mentor, USF, 2020–2022</li>
+        </ul>
+      </div>
+
+      <!-- Peer Review + Memberships -->
+      <div>
+        <div class="col-title">Peer Review &amp; Membership</div>
+        <ul class="service-list">
+          <li>Reviewer, <em>Between the Species</em></li>
+          <li>Reviewer, <em>Violence: An International Journal</em></li>
+          <li>Reviewer, <em>English Journal</em></li>
+          <li>Member, NCTE (National Council of Teachers of English)</li>
+          <li>Member, FCEA (Florida College English Association)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <h2>Get in Touch</h2>
+  <div class="foot-contact">
+    <a href="mailto:Tduncan15@valenciacollege.edu">Tduncan15@valenciacollege.edu</a>
+    <span>407-541-7139</span>
+    <span>206 Mc Quigg Avenue, Orlando 32805</span>
+    <a href="https://github.com/Tduncan15BRO" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <p class="copy">&copy; 2026 Teddy Duncan Jr. &nbsp;·&nbsp; Valencia College, Orlando, Florida</p>
+</footer>
+
 </body>
 </html>
