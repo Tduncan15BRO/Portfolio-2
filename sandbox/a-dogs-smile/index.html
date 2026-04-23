@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>a dog's smile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=JetBrains+Mono&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #e8dcc4;
+        overflow: hidden;
+        font-family: "EB Garamond", serif;
+      }
+      canvas { display: block; }
+      .hint {
+        position: fixed;
+        left: 16px;
+        bottom: 12px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: rgba(60, 50, 40, 0.55);
+        letter-spacing: 0.08em;
+        pointer-events: none;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hint">click anywhere &nbsp; · &nbsp; press r to reset</div>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+    <script src="poem.js"></script>
+    <script src="sketch.js"></script>
+  </body>
+</html>
